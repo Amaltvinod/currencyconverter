@@ -5,6 +5,7 @@ import requests
 window = Tk()
 window.title("CurrencyConverter")
 window.geometry("%dx%d+0+0" % (window.winfo_screenwidth(), window.winfo_screenheight()))
+window.iconbitmap("icon.ico")
 
 
 img = ImageTk.PhotoImage(Image.open("images.png"))

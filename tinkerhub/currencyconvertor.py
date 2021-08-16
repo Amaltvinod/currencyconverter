@@ -8,6 +8,7 @@ window.geometry("%dx%d+0+0" % (window.winfo_screenwidth(), window.winfo_screenhe
 window.iconbitmap("icon.ico")
 window.configure(bg="#FFFFFF")
 
+
 img = ImageTk.PhotoImage(Image.open("images.png"))
 label = Label(window,image=img)
 label.image = img
@@ -19,6 +20,7 @@ new_image=ImageTk.PhotoImage(resized)
 
 
 def conversion():
+    amount1.delete(0,END)
     r=requests.get('https://api.exchangerate-api.com/v4/latest/USD')
 
     re=r.json()
@@ -42,7 +44,7 @@ options = [
             "JPY",
             "CAD",
             "AUD",
-            "CNH",
+            "YER",
             "NZD",
             "CHF",
             "SEK"
@@ -76,6 +78,14 @@ dropto.place(x=400,y=265)
 label4 = Label(window,text = "Converted Amount : ",bg="#FFFFFF").place(x=250,y=315)
 amount1 = Entry(window,borderwidth=5)
 amount1.place(x=400,y=317)
+
+def clear_text():
+    amount.delete(0,END)
+    amount1.delete(0,END)
+clrButton=Button(window,text="Clear", command=clear_text).place(x=450,y=350)
+
+
+
 
 
 window.mainloop()

@@ -20,7 +20,11 @@ new_image=ImageTk.PhotoImage(resized)
 
 
 def conversion():
+    
     amount1.delete(0,END)
+    if(amount.get() == '0' or amount.get() == ''):
+        messagebox.showerror('INVALID INPUT','Amount not passed' )
+ 
     r=requests.get('https://api.exchangerate-api.com/v4/latest/USD')
 
     re=r.json()
@@ -62,6 +66,7 @@ clicked1 = StringVar()
 clicked1.set("USD")
 
 dropfrom = OptionMenu(window,clicked1,*options,)
+dropfrom.config(width = 14)
 dropfrom.pack()
 dropfrom.place(x=400,y=215)
 
@@ -71,6 +76,7 @@ clicked2 = StringVar()
 clicked2.set("INR")
 
 dropto = OptionMenu(window,clicked2,*options)
+dropto.config(width = 14)
 dropto.pack()
 dropto.place(x=400,y=265)
 

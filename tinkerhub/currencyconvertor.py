@@ -1,9 +1,10 @@
 from tkinter import *
 from PIL import Image,ImageTk
+import requests
 
 window = Tk()
 window.title("CurrencyConverter")
-window.geometry("700x700")
+window.geometry("%dx%d+0+0" % (window.winfo_screenwidth(), window.winfo_screenheight()))
 
 
 img = ImageTk.PhotoImage(Image.open("images.png"))
@@ -11,7 +12,7 @@ label = Label(window,image=img)
 label.image = img
 label.place(x=200,y=0)
 
-convert_button = Button(window,text="CONVERT",fg="white",bg="grey",borderwidth=2)
+convert_button = Button(window,text="CONVERT",fg="white",bg="grey",font=('Sans-serif',10,'bold'),borderwidth=2)
 convert_button.place(x=550,y=180)
 
 options = [

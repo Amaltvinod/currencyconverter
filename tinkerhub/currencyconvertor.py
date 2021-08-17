@@ -21,25 +21,34 @@ new_image=ImageTk.PhotoImage(resized)
 
 
 def conversion():
-    
+    amount1.configure(state='normal')
     amount1.delete(0,END)
-    if(amount.get() == '0' or amount.get() == ''):
-        messagebox.showerror('INVALID INPUT','Amount not passed' )
- 
-    r=requests.get('https://api.exchangerate-api.com/v4/latest/USD')
+   
+    try:
+        r=requests.get('https://api.exchangerate-api.com/v4/latest/USD',timeout=10)
+        re=r.json()
+        record=re['rates']
+        if(amount.get() == '0' or amount.get() == ''):
+            messagebox.showerror('INVALID INPUT','Amount not passed' )
+        currency_from=clicked1.get()
+        currency_to=clicked2.get()
+        value=float(amount.get())
+        if(currency_from!='USD'):
+            value=(value / record[currency_from])
+        value=(round(value* record[currency_to],4))
+        amount1.insert(0,str(value))
+        amount1.configure(state='readonly')
+        
+    except requests.exceptions.ConnectTimeout:
+        messagebox.showerror('CONNECTION ERROR','No Internet Connection')
+    except requests.exceptions.ConnectionError:
+        messagebox.showerror('CONNECTION ERROR','No Internet Connection')
 
-    re=r.json()
-    record=re['rates']
-    currency_from=clicked1.get()    
-    currency_to=clicked2.get()
-  
-    value=float(amount.get());
-    if(currency_from!='USD'):
-        value=(value / record[currency_from])
-
-    value=(round(value* record[currency_to],4))
-    amount1.insert(0,str(value))
-    
+    except requests.exceptions.HTTPError:
+        messagebox.showerror('CONNECTION ERROR','No Internet Connection')
+        
+        
+           
 convert_button =Button(window,image=new_image,borderwidth=0,command=conversion)
 convert_button.place(x=550,y=176)
 options = [
@@ -83,12 +92,15 @@ dropto.place(x=400,y=265)
 
 
 label4 = Label(window,text = "Converted Amount : ",bg="#FFFFFF").place(x=250,y=315)
-amount1 = Entry(window,borderwidth=5)
+amount1 = Entry(window,borderwidth=5,state='readonly')
 amount1.place(x=400,y=317)
 
 def clear_text():
     amount.delete(0,END)
+    amount1.configure(state='normal')
     amount1.delete(0,END)
+    amount1.configure(state='readonly')
+    
 clrButton=Button(window,text="Clear", command=clear_text).place(x=450,y=350)
 
 

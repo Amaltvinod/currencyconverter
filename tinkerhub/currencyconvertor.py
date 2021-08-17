@@ -112,13 +112,13 @@ options = [
             "KRW"
             ]
 
-label1 = Label(window,text = "Amount : ",bg="#0188c4",fg="#ffffff").place(x=250,y=180)
+label1 = Label(window,text = "Amount : ",bg="#0188c4",fg="#ffffff",font = 'bold').place(x=250,y=180)
 
 amount = Entry(window,borderwidth=5)
 amount.place(x=400,y=180)
 
 
-label2 = Label(window,text = "Convert From : ",bg="#0188c4",fg="#FFFFFF").place(x=250,y=220)
+label2 = Label(window,text = "Convert From : ",bg="#0188c4",fg="#FFFFFF",font = 'bold').place(x=250,y=220)
 
 clicked1 = StringVar()
 clicked1.set("USD")
@@ -129,7 +129,7 @@ dropfrom.pack()
 dropfrom.place(x=400,y=215)
 
 
-label3 = Label(window,text = "Convert To : ",bg="#0188c4",fg="#FFFFFF").place(x=250,y=270)
+label3 = Label(window,text = "Convert To : ",bg="#0188c4",fg="#FFFFFF",font = 'bold').place(x=250,y=270)
 clicked2 = StringVar()
 clicked2.set("INR")
 
@@ -139,7 +139,7 @@ dropto.pack()
 dropto.place(x=400,y=265)
 
 
-label4 = Label(window,text = "Converted Amount : ",bg="#009fdf",fg="#ffffff").place(x=250,y=315)
+label4 = Label(window,text = "Converted Amount : ",bg="#009fdf",fg="#ffffff",font = 'bold').place(x=248,y=315)
 amount1 = Entry(window,borderwidth=5,state='readonly')
 amount1.place(x=400,y=317)
 

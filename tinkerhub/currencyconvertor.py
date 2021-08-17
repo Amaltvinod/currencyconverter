@@ -32,54 +32,44 @@ def conversion():
             messagebox.showerror('INVALID INPUT','Amount not passed' )
         currency_from=clicked1.get()
         currency_to=clicked2.get()
-        value=float(amount.get())
-        if(currency_from!='USD'):
-            value=(value / record[currency_from])
-        if(currency_to == 'USD'):
-            a = '$'
+        if(len(amount.get())>0):
+            value=float(amount.get())
+            if(currency_from!='USD'):
+                value=(value / record[currency_from])
+            a = StringVar
+            if(currency_to == 'USD'):
+                a = '$'
+            
+            elif(currency_to == 'INR'):
+                a = '₹'
+           
+            elif(currency_to == 'EUR'):
+                a = '€'
+          
+            elif(currency_to == 'JPY'):
+                a = '¥'
+       
+            elif(currency_to == 'CAD'):
+                a = '$'
+          
+            elif(currency_to == 'AUD'):
+                a = '$'
+              
+            elif(currency_to == 'YER'):
+                a = '﷼'
+           
+            elif(currency_to == 'NZD'):
+                a = '$'
+           
+            elif(currency_to == 'CUP'):
+                a = '₱'
+              
+            else:
+                a = '₩'
+         
             value=(round(value* record[currency_to],4))
-            amount1.insert(0,"{} ".format(a) + ' '+ str(value))
-        elif(currency_to == 'INR'):
-            a = '₹'
-            value=(round(value* record[currency_to],4))
-            amount1.insert(0,"{} ".format(a) + ' '+ str(value))
-        elif(currency_to == 'EUR'):
-            a = '€'
-            value=(round(value* record[currency_to],4))
-            amount1.insert(0,"{} ".format(a) + ' '+ str(value))
-        elif(currency_to == 'JPY'):
-            a = '¥'
-            value=(round(value* record[currency_to],4))
-            amount1.insert(0,"{} ".format(a) + ' '+ str(value))
-        elif(currency_to == 'CAD'):
-            a = '$'
-            value=(round(value* record[currency_to],4))
-            amount1.insert(0,"{} ".format(a) + ' '+ str(value))    
-        elif(currency_to == 'AUD'):
-            a = '$'
-            value=(round(value* record[currency_to],4))
-            amount1.insert(0,"{} ".format(a) + ' '+ str(value))    
-        elif(currency_to == 'YER'):
-            a = '﷼'
-            value=(round(value* record[currency_to],4))
-            amount1.insert(0,"{} ".format(a) + ' '+ str(value))   
-        elif(currency_to == 'NZD'):
-            a = '$'
-            value=(round(value* record[currency_to],4))
-            amount1.insert(0,"{} ".format(a) + ' '+ str(value))   
-        elif(currency_to == 'CHF'):
-            a = ' fr.'
-            value=(round(value* record[currency_to],4))
-            amount1.insert(0,"{} ".format(a) + ' '+ str(value))    
-        elif(currency_to == 'SEK'):
-            a = 'kr'
-            value=(round(value* record[currency_to],4))
-            amount1.insert(0,"{} ".format(a) + ' '+ str(value))                        
-        else:
-            value=(round(value* record[currency_to],4))
-            amount1.insert(0, str(value))
-        value= '{:,}'.format(value)
-        amount1.configure(state='readonly')
+            value= '{:,}'.format(value)
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))  
         
     except requests.exceptions.ConnectTimeout:
         messagebox.showerror('CONNECTION ERROR','No Internet Connection')
@@ -105,9 +95,9 @@ options = [
             "AUD",
             "YER",
             "NZD",
-            "CHF",
-            "SEK"
-        ]
+            "CUP",
+            "KRW"
+            ]
 
 label1 = Label(window,text = "Amount : ",bg="#FFFFFF").place(x=250,y=180)
 

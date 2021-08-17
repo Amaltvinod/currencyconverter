@@ -46,6 +46,9 @@ def conversion():
 
     except requests.exceptions.HTTPError:
         messagebox.showerror('CONNECTION ERROR','No Internet Connection')
+    finally:
+        amount1.configure(state='readonly')
+        
         
         
            

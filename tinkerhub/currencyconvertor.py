@@ -36,6 +36,7 @@ def conversion():
         if(currency_from!='USD'):
             value=(value / record[currency_from])
         value=(round(value* record[currency_to],4))
+        value= '{:,}'.format(value)
         amount1.insert(0,str(value))
         amount1.configure(state='readonly')
         

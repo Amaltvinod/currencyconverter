@@ -35,9 +35,50 @@ def conversion():
         value=float(amount.get())
         if(currency_from!='USD'):
             value=(value / record[currency_from])
-        value=(round(value* record[currency_to],4))
+        if(currency_to == 'USD'):
+            a = '$'
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))
+        elif(currency_to == 'INR'):
+            a = '₹'
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))
+        elif(currency_to == 'EUR'):
+            a = '€'
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))
+        elif(currency_to == 'JPY'):
+            a = '¥'
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))
+        elif(currency_to == 'CAD'):
+            a = '$'
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))    
+        elif(currency_to == 'AUD'):
+            a = '$'
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))    
+        elif(currency_to == 'YER'):
+            a = '﷼'
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))   
+        elif(currency_to == 'NZD'):
+            a = '$'
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))   
+        elif(currency_to == 'CHF'):
+            a = ' fr.'
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))    
+        elif(currency_to == 'SEK'):
+            a = 'kr'
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0,"{} ".format(a) + ' '+ str(value))                        
+        else:
+            value=(round(value* record[currency_to],4))
+            amount1.insert(0, str(value))
         value= '{:,}'.format(value)
-        amount1.insert(0,str(value))
         amount1.configure(state='readonly')
         
     except requests.exceptions.ConnectTimeout:
@@ -112,3 +153,4 @@ clrButton=Button(window,text="Clear", command=clear_text).place(x=450,y=350)
 
 
 window.mainloop()
+

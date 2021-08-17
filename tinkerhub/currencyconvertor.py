@@ -20,6 +20,15 @@ resized=img2.resize((140,30),Image.ANTIALIAS)
 new_image=ImageTk.PhotoImage(resized)
 
 
+img1 = ImageTk.PhotoImage(Image.open("info1.jpg").resize((20,20),Image.ANTIALIAS))
+
+
+def info():
+    messagebox.showinfo('For Reference','USD-US DOLLAR\nINR-Indian Rupee\nEUR-Euro\nJPY-Japanese yen\nCAD-Canadian dollar\nAUD-Australian dollar\nYER-Yemeni rial\nNZD-New Zealand dollar\nCHF-Swiss franc\nSEK-Swedish krona' )
+
+info_button = Button(window,image = img1,borderwidth = 0,command = info)
+info_button.place(x=550,y=220)
+
 def conversion():
     amount1.configure(state='normal')
     amount1.delete(0,END)

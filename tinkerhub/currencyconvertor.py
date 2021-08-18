@@ -28,7 +28,7 @@ label4.pack(fill=BOTH, expand = YES)
 img = ImageTk.PhotoImage(Image.open("title_img.jpg").resize((900,185),Image.ANTIALIAS))
 label = Label(window,image=img,borderwidth =0)
 label.image = img
-label.place(x=200,y=0,)
+label.place(x=190,y=0,)
 
 
 

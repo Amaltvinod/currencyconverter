@@ -37,7 +37,7 @@ img1 = ImageTk.PhotoImage(Image.open("info1.jpg").resize((20,20),Image.ANTIALIAS
 
 
 def info():
-    messagebox.showinfo('For Reference','USD-US DOLLAR\nINR-Indian Rupee\nEUR-Euro\nJPY-Japanese yen\nCAD-Canadian dollar\nAUD-Australian dollar\nYER-Yemeni rial\nNZD New-Zealand dollar\nCUP-Cuban Peso\nKRW-South Korean Won' )
+    messagebox.showinfo('For Reference','USD-US Dollar\nINR-Indian Rupee\nEUR-Euro\nJPY-Japanese yen\nCAD-Canadian dollar\nAUD-Australian dollar\nYER-Yemeni rial\nNZD New-Zealand dollar\nCUP-Cuban Peso\nKRW-South Korean Won' )
 
 info_button = Button(window,image = img1,borderwidth = 0,command = info)
 info_button.place(x=550,y=220)

@@ -1,7 +1,7 @@
 from tkinter import *
+from tkinter import ttk
 from tkinter import messagebox
 from PIL import Image,ImageTk
-from tkinter import ttk
 import requests
 
 window = Tk()
@@ -9,8 +9,6 @@ window.title("CurrencyConverter")
 window.geometry("%dx%d+0+0" % (window.winfo_screenwidth(), window.winfo_screenheight()))
 window.iconbitmap("icon.ico")
 window.configure(bg="#FFFFFF")
-
-
 
 
 def resize_image(event):
@@ -26,8 +24,6 @@ photo5 = ImageTk.PhotoImage(image5)
 label4 = ttk.Label(window, image = photo5)
 label4.bind('<Configure>', resize_image)
 label4.pack(fill=BOTH, expand = YES)
-
-
 
 img = ImageTk.PhotoImage(Image.open("images.png"))
 label = Label(window,image=img)
@@ -152,7 +148,7 @@ dropto.pack()
 dropto.place(x=400,y=265)
 
 
-label4 = Label(window,text = "Converted Amount : ",bg="#0188c4",fg="#ffffff").place(x=250,y=315)
+label4 = Label(window,text = "Converted Amount : ",bg="#0188c4",fg="#ffffff").place(x=248,y=315)
 amount1 = Entry(window,borderwidth=5,state='readonly')
 amount1.place(x=400,y=317)
 

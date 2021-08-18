@@ -40,7 +40,7 @@ def info():
     messagebox.showinfo('For Reference','USD-US Dollar\nINR-Indian Rupee\nEUR-Euro\nJPY-Japanese yen\nCAD-Canadian dollar\nAUD-Australian dollar\nYER-Yemeni rial\nNZD New-Zealand dollar\nCUP-Cuban Peso\nKRW-South Korean Won' )
 
 info_button = Button(window,image = img1,borderwidth = 0,command = info)
-info_button.place(x=550,y=220)
+info_button.place(x=600,y=225)
 
 def conversion():
     amount1.configure(state='normal')
@@ -107,7 +107,7 @@ def conversion():
 
 
 convert_button =Button(window,text="CONVERT",bg="black",fg="#ffffff",padx=8,pady=3,borderwidth=2,command=conversion)
-convert_button.place(x=550,y=180)
+convert_button.place(x=600,y=175)
 options = [
             "USD",
             "INR",
@@ -121,10 +121,11 @@ options = [
             "KRW"
             ]
 
-label1 = Label(window,text = "Amount : ",bg="#0188c4",fg="#ffffff").place(x=250,y=180)
+label1 = Label(window,text = "Amount : ",bg="#0188c4",fg="#ffffff").place(x=250,y=175)
 
 amount = Entry(window,borderwidth=5)
-amount.place(x=400,y=180)
+amount.config(width=17)
+amount.place(x=400,y=170)
 
 
 label2 = Label(window,text = "Convert From : ",bg="#0188c4",fg="#FFFFFF").place(x=250,y=220)
@@ -133,7 +134,7 @@ clicked1 = StringVar()
 clicked1.set("USD")
 
 dropfrom = OptionMenu(window,clicked1,*options,)
-dropfrom.config(width = 14)
+dropfrom.config(width = 12)
 dropfrom.pack()
 dropfrom.place(x=400,y=215)
 
@@ -143,14 +144,15 @@ clicked2 = StringVar()
 clicked2.set("INR")
 
 dropto = OptionMenu(window,clicked2,*options)
-dropto.config(width = 14)
+dropto.config(width = 12)
 dropto.pack()
 dropto.place(x=400,y=265)
 
 
 label4 = Label(window,text = "Converted Amount : ",bg="#0188c4",fg="#ffffff").place(x=248,y=315)
 amount1 = Entry(window,borderwidth=5,state='readonly')
-amount1.place(x=400,y=317)
+amount1.config(width=17)
+amount1.place(x=400,y=311)
 
 def clear_text():
     amount.delete(0,END)

@@ -1,5 +1,5 @@
 
-<img src="banner/banner.gif" width="100%" height="">
+<img src="banner.gif" width="100%" height="">
 
 # REAL-TIME CURRENCY CONVERTER
 It is a real-time currency converter which supports conversion of 10 currencies.The project converts currencies by using API to get the real

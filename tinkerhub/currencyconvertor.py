@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image,ImageTk
+from tkinter import ttk
 import requests
 
 window = Tk()
@@ -9,12 +10,24 @@ window.geometry("%dx%d+0+0" % (window.winfo_screenwidth(), window.winfo_screenhe
 window.iconbitmap("icon.ico")
 window.configure(bg="#FFFFFF")
 
-back_image=Image.open("window_background1.jpeg")
-resized1=back_image.resize((1500,800),Image.ANTIALIAS)
-new1_image=ImageTk.PhotoImage(resized1)
 
-label4=Label(window,image=new1_image)
-label4.place(x=0,y=0,relwidth=1,relheight=1)
+
+
+def resize_image(event):
+    new_width = event.width
+    new_height = event.height
+    image5 = copy_of_image.resize((new_width, new_height))
+    photo5 = ImageTk.PhotoImage(image5)
+
+
+image5 = Image.open("window_background1.jpeg")
+copy_of_image = image5.copy()
+photo5 = ImageTk.PhotoImage(image5)
+label4 = ttk.Label(window, image = photo5)
+label4.bind('<Configure>', resize_image)
+label4.pack(fill=BOTH, expand = YES)
+
+
 
 img = ImageTk.PhotoImage(Image.open("images.png"))
 label = Label(window,image=img)
@@ -139,7 +152,7 @@ dropto.pack()
 dropto.place(x=400,y=265)
 
 
-label4 = Label(window,text = "Converted Amount : ",bg="#009fdf",fg="#ffffff").place(x=250,y=315)
+label4 = Label(window,text = "Converted Amount : ",bg="#0188c4",fg="#ffffff").place(x=250,y=315)
 amount1 = Entry(window,borderwidth=5,state='readonly')
 amount1.place(x=400,y=317)
 

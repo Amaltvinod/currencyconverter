@@ -107,7 +107,7 @@ def conversion():
 
 
 
-convert_button =Button(window,text="CONVERT",bg="black",fg="#ffffff",padx=8,pady=3,borderwidth=2,command=conversion)
+convert_button =Button(window,text="CONVERT",bg="darkcyan",fg="#ffffff",padx=8,pady=3,borderwidth=2,command=conversion)
 convert_button.place(x=600,y=175)
 options = [
             "USD",
@@ -121,15 +121,15 @@ options = [
             "CUP",
             "KRW"
             ]
-
-label1 = Label(window,text = "Amount : ",bg="#0188c4",fg="#ffffff").place(x=250,y=175)
+font_style=("Comic Sans MS",12,"bold")
+label1 = Label(window,text = "Amount : ",bg="#0188c4",fg="#ffffff",font=font_style).place(x=250,y=175)
 
 amount = Entry(window,borderwidth=5)
 amount.config(width=17)
-amount.place(x=400,y=170)
+amount.place(x=420,y=170)
 
 
-label2 = Label(window,text = "Convert From : ",bg="#0188c4",fg="#FFFFFF").place(x=250,y=220)
+label2 = Label(window,text = "Convert From : ",bg="#0188c4",fg="#FFFFFF",font=font_style).place(x=250,y=220)
 
 clicked1 = StringVar()
 clicked1.set("USD")
@@ -137,23 +137,23 @@ clicked1.set("USD")
 dropfrom = OptionMenu(window,clicked1,*options,)
 dropfrom.config(width = 12)
 dropfrom.pack()
-dropfrom.place(x=400,y=215)
+dropfrom.place(x=420,y=215)
 
 
-label3 = Label(window,text = "Convert To : ",bg="#0188c4",fg="#FFFFFF").place(x=250,y=270)
+label3 = Label(window,text = "Convert To : ",bg="#0188c4",fg="#FFFFFF",font=font_style).place(x=250,y=270)
 clicked2 = StringVar()
 clicked2.set("INR")
 
 dropto = OptionMenu(window,clicked2,*options)
 dropto.config(width = 12)
 dropto.pack()
-dropto.place(x=400,y=265)
+dropto.place(x=420,y=265)
 
 
-label4 = Label(window,text = "Converted Amount : ",bg="#0188c4",fg="#ffffff").place(x=248,y=315)
+label4 = Label(window,text = "Converted Amount : ",bg="#0188c4",fg="#ffffff",font=font_style).place(x=248,y=315)
 amount1 = Entry(window,borderwidth=5,state='readonly')
 amount1.config(width=17)
-amount1.place(x=400,y=311)
+amount1.place(x=420,y=311)
 
 def clear_text():
     amount.delete(0,END)
@@ -161,7 +161,7 @@ def clear_text():
     amount1.delete(0,END)
     amount1.configure(state='readonly')
     
-clrButton=Button(window,text="CLEAR",bg="black",fg="#ffffff",padx=8,pady=3,borderwidth=2, command=clear_text).place(x=437,y=354)
+clrButton=Button(window,text="CLEAR",bg="DarkCyan",fg="#ffffff",padx=8,pady=3,borderwidth=2, command=clear_text).place(x=440,y=355)
 
 
 

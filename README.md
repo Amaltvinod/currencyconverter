@@ -22,7 +22,7 @@ This video contains  demo of the program and it describes how the code works    
 
 
   
-## Tech Stack -   Python   <img src=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Python_icon_%28black_and_white%29.svg/512px-Python_icon_%28black_and_white%29.svg.png height =30 width =30>
+## Tech Stack -   Python   <img src=https://cdn.ccdc.cam.ac.uk/content/images/products/Product-Python.png heigth=30 width =300>
 
 
 
@@ -46,7 +46,7 @@ Our converter supports 10 currencies.They are :
 
   
 ## Features
-Examples:
+
 - User-Friendly
 - Responsive
 - Real-time

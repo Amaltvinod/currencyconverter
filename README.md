@@ -19,7 +19,7 @@ This video contains  demo of the program and it describes how the code works    
 1. Amal T Vinod  [@Amaltvinod](https://github.com/Amaltvinod)
 2. Nivin Vigi    [@Nivinvigi](https://github.com/Nivinvigi)
 3. Athul Mathew Varughese [@Athulmathew01](https://github.com/Athulmathew01)
-Eg- [@Dexters-Hub](https://www.github.com/Dexters-Hub)
+
 
   
 ## Tech Stack -   Python   <img src=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Python_icon_%28black_and_white%29.svg/512px-Python_icon_%28black_and_white%29.svg.png height =30 width =30>

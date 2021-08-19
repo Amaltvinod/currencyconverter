@@ -22,7 +22,7 @@ This video contains  demo of the program and it describes how the code works    
 
 
   
-## Tech Stack -   Python   <img src=https://cdn.ccdc.cam.ac.uk/content/images/products/Product-Python.png heigth=30 width =300>
+## Tech Stack -   Python   <img src=https://cdn.ccdc.cam.ac.uk/content/images/products/Product-Python.png heigth=30 width =30>
 
 
 

@@ -41,8 +41,9 @@ Our converter supports 10 currencies.They are :
 - CUP
 - KRW
 
+<p align ="center">
 [![Demo](https://img.youtube.com/vi/nqGWHKo5O1c/0.jpg)](https://www.youtube.com/watch?v=nqGWHKo5O1c&feature=youtu.be)
-
+</p>
   
 ## Features
 
